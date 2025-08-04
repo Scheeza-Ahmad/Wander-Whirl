@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WanderWhirl - About Us</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-color: rgba(34, 34, 34, 0.1);
+      }
+      .navbar-overlay {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .testimonial-img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+      }
+
+      .carousel-indicators [data-bs-target] {
+        background-color: #333;
+      }
+
+      .testimonial {
+        background-color: #f8f9fa;
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      .testimonial h2 {
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .testimonial p {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background for navbar -->
+    <div class="container-fluid bg-dark"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-overlay">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#">WanderWhirl</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active fw-bold" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active fw-bold" href="./about.html"
+                >About Us</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active fw-bold" href="./contact.html"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+          <div class="mx-2">
+            <button
+              class="btn btn-outline-light"
+              data-bs-toggle="modal"
+              data-bs-target="#LoginModal"
+            >
+              Login
+            </button>
+            <button
+              class="btn btn-outline-light"
+              data-bs-toggle="modal"
+              data-bs-target="#SignUpModal"
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- About Us Section -->
+    <div
+      class="p-4 p-md-5 mb-4"
+      style="
+        background-color: black;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      "
+    >
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8 px-0 text-white">
+          <h1 class="mb-2">About us</h1>
+          <p class="lead mb-4">
+            WanderWhirl is your ultimate travel companion, offering
+            unforgettable journeys across every corner of Pakistan. From the
+            towering peaks of the Karakoram in the north to the golden beaches
+            of Gwadar in the south, we bring you closer to the breathtaking
+            beauty, rich culture, and hidden gems of this diverse country.
+            Whether you're dreaming of exploring the scenic valleys of Swat and
+            Hunza, discovering the historical grandeur of Lahore and Multan, or
+            adventuring through the deserts of Thar and Cholistan, WanderWhirl
+            ensures a safe, comfortable, and immersive experience. With expertly
+            curated tours, personalized services, and a passion for Pakistan’s
+            heritage, we make every journey not just a trip, but a memory of a
+            lifetime.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- About Tours  -->
+    <div class="container my-5">
+      <div class="row align-items-center">
+        <!-- Image Column -->
+        <div class="col-md-6">
+          <img
+            src="./6.png"
+            class="img-fluid"
+            style="width: 100%"
+            alt="Tour Image"
+          />
+        </div>
+
+        <div class="col-md-6">
+          <h2 class="section-title mb-4">About Tours</h2>
+          <p>
+            WanderWhirl offers expertly curated tours that showcase the
+            breathtaking beauty and rich culture of Pakistan. From serene
+            valleys to historic cities, each tour is designed to create lasting
+            memories and unique experiences.
+          </p>
+          <ul class="list-unstyled two-col clearfix">
+            <li>Outdoor recreation activities</li>
+            <li>Airlines</li>
+            <li>Car Rentals</li>
+            <li>Cruise Lines</li>
+            <li>Hotels</li>
+            <li>Railways</li>
+            <li>Travel Insurance</li>
+            <li>Package Tours</li>
+            <li>Insurance</li>
+            <li>Guide Books</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Text Column -->
+    <div
+      class="container-fluid my-4"
+      style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+    >
+      <div class="my-4 row justify-content-center text-center">
+        <div class="col-lg-8 px-0">
+          <h3 class="mb-2">Meet our Team Experts</h3>
+          <p class="lead mb-4">
+            The team at WanderWhirl is a passionate group of travel enthusiasts
+            dedicated to crafting unforgettable journeys across Pakistan. With
+            expert knowledge and personalized service, they ensure every trip is
+            seamless, safe, and full of adventure.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 text-center">
+          <img
+            src="./p1.png"
+            alt="Image 1"
+            class="rounded-circle mb-3"
+            width="140"
+            height="140"
+          />
+          <h2 class="fw-normal">ABC</h2>
+          <p>Co-Founder & CEO</p>
+        </div>
+
+        <div class="col-lg-4 text-center">
+          <img
+            src="./p2.png"
+            alt="Image 2"
+            class="rounded-circle mb-3"
+            width="140"
+            height="140"
+          />
+          <h2 class="fw-normal">Scheeza Ahmad</h2>
+          <p>Co-Founder & CEO</p>
+        </div>
+
+        <div class="col-lg-4 text-center">
+          <img
+            src="./p3.png"
+            alt="Image 3"
+            class="rounded-circle mb-3"
+            width="140"
+            height="140"
+          />
+          <h2 class="fw-normal">XYZ</h2>
+          <p>Co-Founder & CEO</p>
+        </div>
+      </div>
+    </div>
+    <!-- Testimonial  -->
+    <section class="testimonial">
+      <h2>Testimonials</h2>
+      <hr style="width: 60px; margin: 10px auto; border-color: #000" />
+
+      <div
+        id="testimonialCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./p1.png" class="testimonial-img" alt="User" />
+            <h5>ABC</h5>
+            <p>
+              "At WanderWhirl, we don’t just plan trips—we craft journeys that
+              shape your stories. Let’s explore the world, one dream at a time."
+            </p>
+          </div>
+
+          <div class="carousel-item">
+            <img src="./p2.png" class="testimonial-img" alt="User" />
+            <h5>Scheeza Ahmad</h5>
+            <p>
+              "Every adventure starts with a single step. At WanderWhirl, we
+              walk that step with you—fueling passion, discovery, and
+              unforgettable moments."
+            </p>
+          </div>
+        </div>
+
+        <div class="carousel-indicators mt-4">
+          <button
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Are you Ready  -->
+    <div class="container my-5">
+      <div class="row align-items-center">
+        <!-- Text Column -->
+        <div class="col-md-6">
+          <h2 class="mb-4">Are you Ready???</h2>
+          <p>
+            ✨ "Unwind your soul—WanderWhirl takes you where memories are made!"
+            🌍 "From hidden gems to iconic wonders—discover the world the
+            WanderWhirl way!"
+          </p>
+        </div>
+
+        <!-- Image Column -->
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="image-stack">
+            <img
+              src="./5.png"
+              class="img-fluid"
+              style="width: 100%"
+              alt="Plane"
+              class="bg-img img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Contact us  -->
+    <div class="py-5 cta-section bg-dark my-4">
+      <div class="container-fluid">
+        <div class="row text-center">
+          <div class="col-md-12">
+            <h2 class="mb-2 text-white">
+              Lets Explore the Best. Contact Us Now!!!
+            </h2>
+            <p class="mb-4 lead text-white text-white-opacity">
+              "WanderWhirl – Discover Pakistan, One Journey at a Time."
+            </p>
+            <button
+              type="button"
+              class="btn btn-outline-light"
+              onclick="location.href='./contact.html'"
+            >
+              Contact us
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer  -->
+    <footer
+      class="container-fluid py-5"
+      style="background-color: black; color: white"
+    >
+      <div class="row">
+        <div class="col-12 col-md">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            class="d-block mb-2"
+            role="img"
+            viewBox="0 0 24 24"
+          >
+            <title>Product</title>
+            <circle cx="12" cy="12" r="10"></circle>
+            <path
+              d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"
+            ></path>
+          </svg>
+          <small class="d-block mb-3 text-body-secondary">© 2017–2025</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Features</h5>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Good technical team</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Experienced Travel Guides</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Good Hotels</a
+              >
+            </li>
+
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Good travel Packages</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Reach Us At</h5>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Tel no : 03408700002</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="./index.html"
+                >www.travelwhirl.com</a
+              >
+            </li>
+            <li>
+              <a
+                class="link-secondary text-decoration-none"
+                href="https://www.instagram.com/"
+                >Instagram: travelwhirl</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >tranvelwhirl117@gmail.com</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Business</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Airlines and Hotels</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Government</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Experienced Travel Agents</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>About</h5>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >WanderWhirl</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >1042/B E-1 Johar Town Lahore</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Privacy</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#">Terms</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

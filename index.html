@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WanderWhirl</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    /* .carousel {
+      height: 100vh;
+      overflow: hidden;
+    } */
+    body {
+      background-color: rgba(34, 34, 34, 0.1);
+    }
+    .carousel-item img {
+      object-fit: cover;
+      height: 100%;
+    }
+
+    .navbar-overlay {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .carousel-caption.custom-caption {
+      z-index: 20;
+      position: absolute;
+      bottom: 50%;
+      left: 5%;
+      right: auto;
+      text-align: left;
+      max-width: 90%;
+    }
+
+    .typing-container {
+      width: fit-content;
+      border-right: 2px solid white;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(30) 1, blink 0.75s step-end infinite;
+      font-size: 2.5vw;
+      font-weight: bold;
+    }
+
+    .image-stack {
+      position: relative;
+      width: fit-content;
+      /* transition:transform 0.5 linear; */
+    }
+
+    .image-stack img.bg-img {
+      position: relative;
+      z-index: 1;
+      width: 300px;
+      border-radius: 10px;
+      transition: transform 0.5s ease-in-out;
+    }
+    .image-stack img.bg-img:hover {
+      transform: translateY(-20px);
+    }
+
+    .image-stack img.fg-img {
+      position: absolute;
+      top: -30px;
+      left: -30px;
+      z-index: 2;
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.5s ease-in-out;
+    }
+    .image-stack img.fg-img:hover {
+      transform: translateY(20px);
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .carousel-caption.custom-caption {
+        bottom: 40%;
+        left: 5%;
+        max-width: 85%;
+      }
+
+      .typing-container {
+        font-size: 5vw;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .carousel-caption.custom-caption {
+        bottom: 30%;
+        left: 5%;
+        max-width: 90%;
+      }
+
+      .typing-container {
+        font-size: 6vw;
+      }
+    }
+    .testimonial-img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+    }
+
+    .carousel-indicators [data-bs-target] {
+      background-color: #333;
+    }
+
+    .testimonial {
+      background-color: #f8f9fa;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .testimonial h2 {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .testimonial p {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+          .travel-card img {
+        height: 280px;
+        object-fit: cover;
+        border-radius: 1rem 1rem 0 0;
+      }
+      .travel-card {
+        border-radius: 1rem;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+      }
+      .travel-card:hover {
+        transform: translateY(-5px);
+      }
+      .icon-text {
+        font-size: 0.9rem;
+        color: #666;
+        margin-top: 0.5rem;
+      }
+      .card-title {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+      }
+      .price {
+        font-weight: bold;
+        color: #0d6efd;
+        margin-top: 0.2rem;
+      }
+  </style>
+
+  <body>
+    <div
+      id="carouselExampleAutoplaying"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <!-- <div id="carouselExampleAutoplaying" class="carousel slide carousel" data-bs-ride="carousel"> -->
+
+      <!-- NAVBAR INSIDE CAROUSEL -->
+      <nav class="navbar navbar-expand-lg navbar-dark navbar-overlay">
+        <div class="container-fluid">
+          <a class="navbar-brand" style="font-weight: bolder" href="#"
+            >WanderWhirl</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarText"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  style="font-weight: bold"
+                  href="./index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  style="font-weight: bold"
+                  href="./about.html"
+                  >About Us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  style="font-weight: bold"
+                  href="./contact.html"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+            <div class="mx-2">
+              <button
+                class="btn btn-outline-light"
+                data-bs-toggle="modal"
+                data-bs-target="#LoginModal"
+              >
+                Login
+              </button>
+              <button
+                class="btn btn-outline-light"
+                data-bs-toggle="modal"
+                data-bs-target="#SignUpModal"
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Your carousel-inner and items remain below -->
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./shogran.png" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-block custom-caption">
+            <h5 class="typing-container text-white">
+              Turn Dreams into Destinations.
+            </h5>
+            <!-- <p>Some representative placeholder content for the first slide.</p> -->
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./2.png" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-block custom-caption">
+            <h5 class="typing-container text-white">
+              Wander More Worry Less...
+            </h5>
+            <!-- <p>Some representative placeholder content for the first slide.</p> -->
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./3.png" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-block custom-caption">
+            <h5 class="typing-container text-white">Pack your Bags...</h5>
+            <!-- <p>Some representative placeholder content for the first slide.</p> -->
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="LoginModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5">Login to WanderWhirl</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="loginForm">
+              <div class="mb-3">
+                <label class="form-label">Email address</label>
+                <input type="email" class="form-control" id="loginEmail" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="loginPassword"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-outline-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button class="btn btn-outline-primary" id="loginSubmit">
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="SignUpModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5">Sign Up for WanderWhirl</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="signupForm">
+              <div class="mb-3">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="signupName" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email address</label>
+                <input type="email" class="form-control" id="signupEmail" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="signupPassword"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-outline-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button class="btn btn-outline-primary" id="signupSubmit">
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="d-flex justify-content-center align-items-center vh-100 mx-4"> -->
+
+    <div class="container my-5">
+      <div class="row align-items-center">
+        <!-- Text Column -->
+        <div class="col-md-6">
+          <h2 class="mb-4">Corners of The World With Us</h2>
+          <p>
+            WanderWhirl is your ultimate travel companion, offering
+            unforgettable journeys across every corner...........
+          </p>
+          <p>
+            From the towering peaks of the Karakoram in the north to the golden
+            beaches................
+          </p>
+          <a
+            href="#"
+            class="btn btn-danger rounded-pill px-4"
+            onclick="location.href='./about.html'"
+            >Read more</a
+          >
+        </div>
+
+        <!-- Image Column -->
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="image-stack">
+            <!-- Background image -->
+            <img src="./plane.png" alt="Plane" class="bg-img img-fluid" />
+            <!-- Foreground image -->
+            <img src="./girl.png" alt="Traveler" class="fg-img img-fluid" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- services  -->
+
+    <div class="container my-2" >
+      <h2 class="text-center mb-5">Our Services</h2>
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="./s1.png"
+                  class="img-fluid rounded-start card-img-small"
+                  alt="Flight Booking"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Flight Booking</h5>
+                  <p class="card-text">
+                    ✈ Book domestic and international flights at the best
+                    rates—fast and hassle-free!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="./s2.png"
+                  class="img-fluid rounded-start card-img-small"
+                  alt="Custom Tour Packages"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Custom Tour Packages</h5>
+                  <p class="card-text">
+                    🌍 Explore the world your way with personalized itineraries
+                    crafted just for you.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="./s3.png"
+                  class="img-fluid rounded-start card-img-small"
+                  alt="Hotel Reservations"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Hotel Reservations</h5>
+                  <p class="card-text">
+                    🏨 Stay in comfort with handpicked hotels that match your
+                    travel style and budget.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="./s4.png"
+                  class="img-fluid rounded-start card-img-small"
+                  alt="Visa Assistance"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Visa Assistance</h5>
+                  <p class="card-text">
+                    🛂 Leave the paperwork to us—easy and reliable visa guidance
+                    for every destination.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="./s5.png"
+                  class="img-fluid rounded-start card-img-small"
+                  alt="Travel Insurance"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Travel Insurance</h5>
+                  <p class="card-text">
+                    🛡 Stay protected throughout your journey with comprehensive
+                    travel insurance plans.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="./s6.png"
+                  class="img-fluid rounded-start card-img-small"
+                  alt="Local Transport & Guides"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Local Transport & Guides</h5>
+                  <p class="card-text">
+                    🚗 From airport pickups to city tours—enjoy stress-free
+                    local travel with trusted guides.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ <!-- Packages  -->
+        <div class="container py-5">
+          <h2 class="text-center my-5">Travel Packages</h2>
+      <div class="row g-4 justify-content-center">
+        <!-- Card 1 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="travel-card bg-white">
+            <img
+              src="./cholistan.png"
+              class="w-100"
+              alt="Rialto Mountains"
+            />
+            <div class="p-3 text-center">
+              <div class="icon-text">
+                <i class="bi bi-geo-alt"></i> Desert
+              </div>
+              <div class="card-title">Cholistan</div>
+              <div class="price">Rs : 20000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="travel-card bg-white">
+            <img
+              src="./fairy.png"
+              class="w-100"
+              alt="San Francisco"
+            />
+            <div class="p-3 text-center">
+              <div class="icon-text">
+                <i class="bi bi-geo-alt"></i> Heaven On Earth
+              </div>
+              <div class="card-title">Fairy Meadows</div>
+              <div class="price">Rs : 40000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="travel-card bg-white">
+            <img
+              src="shogran.png"
+              class="w-100"
+              alt="Perhentian Islands"
+            />
+            <div class="p-3 text-center">
+              <div class="icon-text">
+                <i class="bi bi-geo-alt"></i> Mountains
+              </div>
+              <div class="card-title">Shogran Valley</div>
+              <div class="price">Rs : 28000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="travel-card bg-white">
+            <img
+              src="./Attabad.png"
+              class="w-100"
+              alt="Lake Thun"
+            />
+            <div class="p-3 text-center">
+              <div class="icon-text">
+                <i class="bi bi-geo-alt"></i> Lakes
+              </div>
+              <div class="card-title">Attabad Lake</div>
+              <div class="price">Rs : 30000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial  -->
+    <section class="testimonial">
+      <h2>Testimonials</h2>
+      <hr style="width: 60px; margin: 10px auto; border-color: #000" />
+
+      <div
+        id="testimonialCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./p1.png" class="testimonial-img" alt="User" />
+            <h5>ABC</h5>
+            <p>
+              "At WanderWhirl, we don’t just plan trips—we craft journeys that
+              shape your stories. Let’s explore the world, one dream at a time."
+            </p>
+          </div>
+
+          <div class="carousel-item">
+            <img src="./p2.png" class="testimonial-img" alt="User" />
+            <h5>Scheeza Ahmad</h5>
+            <p>
+              "Every adventure starts with a single step. At WanderWhirl, we
+              walk that step with you—fueling passion, discovery, and
+              unforgettable moments."
+            </p>
+          </div>
+        </div>
+
+        <div class="carousel-indicators mt-4">
+          <button
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact us  -->
+    <div class="py-5 cta-section bg-dark my-4">
+      <div class="container-fluid">
+        <div class="row text-center">
+          <div class="col-md-12">
+            <h2 class="mb-2 text-white">
+              Lets Explore the Best. Contact Us Now!!!
+            </h2>
+            <p class="mb-4 lead text-white text-white-opacity">
+              "WanderWhirl – Discover Pakistan, One Journey at a Time."
+            </p>
+            <button
+              type="button"
+              class="btn btn-outline-light"
+              onclick="location.href='./contact.html'"
+            >
+              Contact us
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer  -->
+
+    <footer
+      class="container-fluid py-5"
+      style="background-color: black; color: white"
+    >
+      <div class="row">
+        <div class="col-12 col-md">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            class="d-block mb-2"
+            role="img"
+            viewBox="0 0 24 24"
+          >
+            <title>Product</title>
+            <circle cx="12" cy="12" r="10"></circle>
+            <path
+              d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"
+            ></path>
+          </svg>
+          <small class="d-block mb-3 text-body-secondary">© 2017–2025</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Features</h5>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Good technical team</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Experienced Travel Guides</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Good Hotels</a
+              >
+            </li>
+
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Good travel Packages</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Reach Us At</h5>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Tel no : 03408700002</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="./index.html"
+                >www.travelwhirl.com</a
+              >
+            </li>
+            <li>
+              <a
+                class="link-secondary text-decoration-none"
+                href="https://www.instagram.com/"
+                >Instagram: travelwhirl</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >tranvelwhirl117@gmail.com</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Business</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Airlines and Hotels</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Government</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Experienced Travel Agents</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>About</h5>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >WanderWhirl</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >1042/B E-1 Johar Town Lahore</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#"
+                >Privacy</a
+              >
+            </li>
+            <li>
+              <a class="link-secondary text-decoration-none" href="#">Terms</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // LOGIN
+      document
+        .getElementById("loginSubmit")
+        .addEventListener("click", function () {
+          const email = document.getElementById("loginEmail").value.trim();
+          const password = document
+            .getElementById("loginPassword")
+            .value.trim();
+
+          if (email && password) {
+            alert("Login successful!");
+            const modal = bootstrap.Modal.getInstance(
+              document.getElementById("LoginModal")
+            );
+            modal.hide();
+          } else {
+            alert("Please fill out all fields to login.");
+          }
+        });
+
+      // SIGNUP
+      document
+        .getElementById("signupSubmit")
+        .addEventListener("click", function () {
+          const name = document.getElementById("signupName").value.trim();
+          const email = document.getElementById("signupEmail").value.trim();
+          const password = document
+            .getElementById("signupPassword")
+            .value.trim();
+
+          if (name && email && password) {
+            alert("Sign Up successful!");
+            const modal = bootstrap.Modal.getInstance(
+              document.getElementById("SignUpModal")
+            );
+            modal.hide();
+          } else {
+            alert("Please fill out all fields to sign up.");
+          }
+        });
+    </script>
+  </body>
+</html>
